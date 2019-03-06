@@ -6,13 +6,12 @@ Created on Wed Mar  6 02:57:00 2019
 """
 
 import pandas as pd
-from collections import Counter
 import numpy as np
 file = r'idn-tagged-corpus-master/Indonesian_Manually_Tagged_Corpus.tsv'
 dt =  pd.read_table(file,header=None)
 
-X=dt.iloc[:,0]
-Y=dt.iloc[:,1]
+X=dt.iloc[0:1000,0]
+Y=dt.iloc[0:1000,1]
 Z=[]
 for i in range(len(Y)-1):
     Z.append((Y[i],Y[i+1]))
