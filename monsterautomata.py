@@ -5,6 +5,12 @@ Created on Thu Mar  7 21:48:18 2019
 @author: Rozan
 """
 import pandas as pd
+def sp(pd1,pd2):
+    t=pd.crosstab(pd1,pd2)
+    cn=t.columns.values
+    w=t[cn].sum()
+    return w
+    
 
 def pt(pd1,pd2):
     t= pd.crosstab(pd1,pd2)
