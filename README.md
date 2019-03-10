@@ -3,7 +3,7 @@ Ini adalah proses post tagging berbahasa Indonesia menggunakan Source tsv http:/
 
 
 # Requirement 
-1.Pandas \n
+1.Pandas 
 2.Numpy
 
 # Penjelasan
