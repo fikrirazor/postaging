@@ -17,14 +17,25 @@ Y=dt.iloc[0:1000,1]
 
 f=np.asarray(Y.iloc[0:999])
 c=np.asarray(Y.iloc[1:1000])
+obs=h.getobs(X,Y)
+states=h.getstates(f,c)
 peluangawal=h.sp(X,Y)
-peluangemisi=h.pt(X,Y) #P(Xt|Yt)
+peluangemisi=h.pt(X,Y).T #P(Yt|Xt)
 peluangtransisi=h.pt(f,c) #P(Yt|Yt-1)
 
 
    
-y=np.asarray(peluangawal)
+y=np.asarray(peluangawal)#np.asarray(peluangawal)#np.asarray(peluangawal/np.sum(peluangawal))
 A=np.asarray(peluangtransisi)
-B=np.asarray(peluangemisi).T
+B=np.asarray(peluangemisi)
      
-gg=h.viterbi(y,A,B)
+
+
+
+X_test=dt.iloc[1000:10100,0]
+
+path, delta, phi = h.viterbi(y,A,B)
+print('\nsingle best state path: \n', path)
+print('delta:\n', delta)
+print('phi:\n', phi)
+

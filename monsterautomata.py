@@ -6,6 +6,15 @@ Created on Thu Mar  7 21:48:18 2019
 """
 import pandas as pd
 import numpy as np
+def getobs(pd1,pd2):
+    t=pd.crosstab(pd1,pd2)
+    cn=pd1.values
+    return cn
+
+def getstates(pd1,pd2):
+    t=pd.crosstab(pd1,pd2)
+    cn=t.columns.values
+    return cn
 
 def sp(pd1,pd2):
     t=pd.crosstab(pd1,pd2)
