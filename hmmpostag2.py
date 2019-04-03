@@ -54,7 +54,7 @@ for i in tabp:
 ''''Baseline'''
 import hmmgo as go
 baseline=go.baseline(teskata,valuemisi)
-
+print("baseline=",baseline)
 
 '''HMM'''
 
@@ -120,7 +120,7 @@ for i in reversed(order):
     sol.append(i)
 
 hmm = list(zip(kata,sol))
-print(hmm)
+print("hmm=",hmm)
 
 
 #plot baseline sample 20
