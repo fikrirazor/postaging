@@ -121,3 +121,14 @@ for i in reversed(order):
 
 hmm = list(zip(kata,sol))
 print(hmm)
+
+
+#plot baseline sample 20
+import matplotlib.pyplot as plt
+x, y = zip(*baseline[0:32])
+plt.plot(y, x,'or')
+
+#plot hmm sample 20
+import matplotlib.pyplot as plt
+x, y = zip(*hmm[0:28])
+plt.plot(y, x,'or')
